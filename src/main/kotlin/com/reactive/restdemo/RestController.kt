@@ -1,6 +1,7 @@
 package com.reactive.restdemo
 
 import org.springframework.http.HttpStatus
+import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -29,7 +30,7 @@ class RestController(
             ResponseEntity("""{"result":"OK", "item": ${request.id}}""", HttpStatus.OK)
     }
 
-    @GetMapping("getSomething/{itemId}")
+    @GetMapping("getSomething/{itemId}", produces = ["application/json"])
     fun getSomething(@PathVariable itemId: Int): ResponseEntity<String> {
         val ran = random.nextInt()
         return if (ran % 2 != 0) {

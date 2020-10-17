@@ -19,6 +19,9 @@ class ApplicationTests {
 		testGateway.sendInit(Item(120))
 		testGateway.sendInit(Item(121))
 		testGateway.sendInit(Item(122))
+
+
+		Thread.sleep(10000)
 	}
 
 }

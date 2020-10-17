@@ -1,6 +1,6 @@
 package com.reactive.restdemo.config
 
-import com.reactive.restdemo.RestGateway
+import com.reactive.restdemo.AsyncRestGateway
 import com.reactive.restdemo.Application.Item
 import org.springframework.web.client.RestTemplate
 
@@ -9,7 +9,7 @@ class TestGateway (
 ){
     fun sendInit(item: Item) {
             restTemplate.postForEntity(
-                "$HOST_NAME/initRequest", item, RestGateway.Response::class.java
+                "$HOST_NAME/initRequest", item, AsyncRestGateway.Response::class.java
             )
     }
 
