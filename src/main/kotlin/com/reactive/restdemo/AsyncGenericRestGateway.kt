@@ -14,7 +14,7 @@ class AsyncGenericRestGateway(
     private val webClient: WebClient
 ) : AsyncRestGateway {
     override fun get(id: Int): Flux<Result> {
-        logger.info("starting get request")
+        logger.info("starting insert request for itemId $id")
         return try {
             val result = webClient
                 .get()
@@ -29,7 +29,7 @@ class AsyncGenericRestGateway(
     }
 
     override fun insert(item: Item): Flux<Result> {
-        logger.info("starting insert request")
+        logger.info("starting insert request for item $item")
         return try {
             val result = webClient
                 .post()
@@ -45,7 +45,7 @@ class AsyncGenericRestGateway(
     }
 
     override fun final(item: Item): Flux<Result> {
-        logger.info("starting final request")
+        logger.info("starting final request for item $item")
         return try {
             val result = webClient
                 .post()
