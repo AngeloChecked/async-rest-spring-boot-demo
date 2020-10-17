@@ -16,11 +16,10 @@ class ApplicationTests {
 
 	@Test
 	fun contextLoads() {
-		testGateway.sendInit(Item(120))
-		testGateway.sendInit(Item(121))
-		testGateway.sendInit(Item(122))
-		testGateway.sendInit(Item(123))
-		testGateway.sendInit(Item(124))
+		repeat(525) {
+			testGateway.sendInit(Item(it))
+		}
+
 
 
 		Thread.sleep(10000)
